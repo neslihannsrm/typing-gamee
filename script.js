@@ -28,7 +28,7 @@ const words = [
 ];
 
 let score = 0;
-let time =  20;
+let time =  10;
 
 
 function addWordToDOM() {
@@ -43,6 +43,7 @@ function updateScore() {
   scoreElement.innerText = `Score: ${score}`; 
 }
 
+
 inputElement.addEventListener("input", function () {
   const currentWord = wordElement.innerText; 
   const userInput = inputElement.value; 
@@ -51,6 +52,8 @@ inputElement.addEventListener("input", function () {
     updateScore(); 
     addWordToDOM(); 
     inputElement.value = ""; 
+    time += 5 ;
+    timerElement.innerText = `Time: ${time}s`;
   }
 });
 
